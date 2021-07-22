@@ -1,4 +1,4 @@
-# taller-git
+# git-elsoc
 
 **Autor**: Julio César Iturra Sanhueza.
 
