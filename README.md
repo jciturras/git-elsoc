@@ -9,7 +9,7 @@ El presente ejemplo se fundamenta en el Protocolo IPO ([Castillo, 2020](https://
 ```
 │   LICENSE
 │   README.md
-│   taller-git.Rproj
+│   git-elsoc.Rproj
 │   paper.Rmd
 │
 ├───input
