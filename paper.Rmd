@@ -1,20 +1,9 @@
 ---
-title: "Lorem ipsum dolor sit amet"
-css: "input/css/custom.css" # custom CSS para html
+title: "Reproducibilidad: Taller invierno ELSOC-COES"
 linestretch: '1.5'          # interlineado 
 link-citations: yes         # citas linkeadas
-author:
-- name: Duke A Caboom
-  affiliation: University of Tuktoyaktuk
-  email: dtholmes@mail.ubc.ca
-  number: 1
-- name: Justin d'Ottawa
-  affiliation: University of Ottawa
-  number: 2
-- name: Pedro Torres
-  number: 1,2 
-# Nota: Autores que comparten filiacion, poner el mismo number y declarar filiación una sola vez.  
-abstract: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do *eiusmod tempor* incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+author: Julio Iturra Sanhueza
+abstract: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do *eiusmod tempor* incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 output:
   bookdown::html_document2:
     number_sections: false
@@ -22,16 +11,11 @@ output:
     template: null
     toc: false
     keep_tex: false
-    pandoc_args:
-      - --template=input/mytemplate.tex #custom template para usar autores con afiliacion  
 linkcolor: blue                         # enlaces y citas en color azul
-bibliography: input/bib/library.bib     # bibliografia en bibtex
-editor_options:
-  chunk_output_type: console            # en RStudio, mostrar output en consola
+# bibliography: input/bib/library.bib     # bibliografia en bibtex
 geometry: "left=2cm,right=2cm,top=3cm,bottom=3cm" # márgenes de página
 header-includes:
   - \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-  - \usepackage{times}           # Times New Roman
   - \usepackage{caption}
   - \captionsetup[figure, table]{labelfont={bf},labelformat={default},labelsep=period}
   - \usepackage{graphicx}
@@ -53,27 +37,16 @@ if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
 if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
 pacman::p_load(knitr, kableExtra, dplyr, ggplot2,sjmisc,texreg) # librerias
 knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
-                      message = FALSE,  # mensajes/avisos de librerias  
+                      message = FALSE,  # mensajes/avisos de librerias
+                      echo = FALSE,
                       cache = FALSE,    # cache de los chunks,usar analisis pesados
                       out.width = '85%',# largo de imagen en %
                       fig.pos= "H",     # posicion figuras H = HERE
+                      fig.align = "center",
                       echo = FALSE      # incluir chunk en output
                       )
 options(scipen=999) # notacion cientifica
 rm(list=ls())       # limpiar workspace
-options(knitr.kable.NA = '') # NA en kable = ''
-
-table_format = if(is_html_output()) { # Usar en argumento "format=" de kable
-  "html"
-} else if(is_latex_output()) {
-  "latex"
-}
-
-fwidth = if(is_html_output()) { #Usar en argumento "full_width" de kableExtra
-  T
-} else if(is_latex_output()) {
-  F
-}
 ```
 
 # Introducción
@@ -94,113 +67,209 @@ $H_{3}$: Pertenecer a grupos con mayor logro educativo, se asocia con una mayor 
 
 * Descripción de la muestra
 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
 ## Variables
 
 * Variable(s) dependiente(s)
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
 * Variables independientes
 
-* Descriptivos
-* Bivariados
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
 
 ## Métodos
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
 
 # Resultados
 
 
-> Para referencias una imagen generada en ggplot2 debemos fijar un label en el chunk: ` ```{r biscuits}` Luego, en el texto, usamos el tag `\@ref(fig:label)` como en el ejemplo:
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-```{r biscuits, echo=FALSE, fig.cap = "Relación entre biscuits y tea", fig.align='center',fig.width=10,fig.height=8,out.width='50%'}
-tea <- rnorm(100)
-biscuits <- tea + rnorm(100, 0, 1.3)
-data <- data.frame(tea, biscuits) 
-p <- ggplot(data, aes(x = tea, y = biscuits)) +
-    geom_point() + 
-    geom_smooth(method = "lm") + 
-    labs(x = "Tea", y = "Biscuits") + theme_bw() 
-print(p)
+
+
+```{r fig.cap="Estatus Social Subjetivo según año"}
+if (!require("pacman")) install.packages("pacman") # instalar pacman
+pacman::p_load(dplyr,       # Manipulacion de datos 
+               haven,       # importar datos en .dta o .sav
+               sjmisc,      # descriptivos y frecuencias
+               sjPlot,      # tablas, plots y descriptivos
+               summarytools,# resumen de dataframe
+               texreg,      # tablas de regresion
+               knitr,       # tablas kable
+               kableExtra,  # tablas kable personalizadas
+               ggplot2,     # plots
+               corrplot     # plot correlacion
+               )
+load(file = "input/data/proc/df_final.Rdata")
+#Ejemplo: [VARIABLE = conf_presi] y [VAR_Z = ola]
+a <- data.frame((table(df_final$estatus,df_final$ola)))
+b <- a %>% group_by(Var2) %>% 
+  transmute(porcentaje=Freq/sum(Freq)) %>% 
+  rename(ola=Var2)
+b$ola <- NULL
+datos.grafico<- cbind(a,b)
+
+#Nombrar el gráfico (c.1.1) y seleccionar datos (datos.grafico)
+c.1.1 <-datos.grafico %>% 
+    #indicar el contenido del gráfico: ejes y relleno (fill) por ola
+    ggplot(aes(y = porcentaje, x = Var1, fill = Var2, 
+               label = as.character(scales::percent(porcentaje, accuracy = .1)))) +
+    #fijar el fondo y el marco del gráfico uniforme
+    theme_bw() + 
+    #geom_col para usar variable y=porcentaje. 'dodge2' para formato side-to-side
+    geom_col(position= 'dodge2') +
+    #escala del eje y en porcentajes del 0 al 100%
+    scale_y_continuous(labels = scales::percent,
+                       limits = c(0, 1)) +
+    #Nombres de los ejes se eliminan
+    ylab(label = NULL) +
+    xlab(label = NULL) +
+    #colores oficiales por ola: degradé 'viridis'
+    scale_fill_viridis_d(begin = .33, end = .66, direction = -1, option = 'viridis') +
+    #etiquetas por sobre cada barra
+    geom_text(vjust = -0.8,
+              position = position_dodge(width = .9),
+              size= 2.75) +
+    #posicionamiento de leyenda arriba
+    theme(legend.position = 'top',
+          legend.title = element_blank()) +
+    #titulo del gráfico
+    ggtitle('Estatus Social Subjetivo según año')
+
+c.1.1
 ```
 
-Como podemos ver la correlación en la Figura \@ref(fig:biscuits) 
 
-> Para referencias una tabla generada en `knitr::kable()` debemos fijar un label en las opciones del chunk : ` ```{r modelo1}`. Luego, en el texto, usamos el tag `\@ref(tab:label)` como en el ejemplo:
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-```{r modelo01, echo=FALSE}
-data(efc) # Cargar datos
-efc <- to_factor(efc, c161sex, e42dep, c172code) # convertir variables a factor
-m   <- lm(neg_c_7 ~ pos_v_4 + c12hour + e42dep + c172code, data = efc)# Modelo 1
-m2   <- lm(neg_c_7 ~ pos_v_4 + c12hour + e42dep , data = efc)         # Modelo 2
-broom::tidy(m) %>%                      # resumen de modelo en formato tidy
-  kable(format = table_format,          # formato de tabla ("html" o "latex")
-        caption = "Tabla de regresión", # Título de tabla
-        digits = 2,                     # decimales
-        booktabs= TRUE,                 # lineas horizontales de tabla
-        col.names = c("Variable","Coef.","SE","t","p")) %>% # etiquetas columnas
-  kable_styling(full_width = fwidth,                        # ancho de tabla
-                latex_options = c("HOLD_position")          # opciones de tabla pdf
-                )   
+
+```{r fig.cap="Cambio de frecuencias de Estatus Subjetivo según año"}
+if (!require("pacman")) install.packages("pacman") # instalar pacman
+pacman::p_load(dplyr,       # Manipulacion de datos 
+               haven,       # importar datos en .dta o .sav
+               sjmisc,      # descriptivos y frecuencias
+               sjPlot,      # tablas, plots y descriptivos
+               summarytools,# resumen de dataframe
+               texreg,      # tablas de regresion
+               knitr,       # tablas kable
+               kableExtra,  # tablas kable personalizadas
+               ggplot2,     # plots
+               corrplot     # plot correlacion
+               )
+load(file = "input/data/proc/df_final.Rdata")
+
+#Paso 1
+a1 <- data.frame(table(df_final$estatus,df_final$ola,df_final$idencuesta))
+a1 <- a1 %>% dplyr::filter(Freq>0)
+a2 <- a1 %>% group_by(Var2) %>% transmute(porcentaje=Freq/sum(Freq)) 
+a2$Var2 <- NULL
+datos.d.1<- cbind(a1,a2)
+datos.d.1 <- na.omit(datos.d.1)
+
+#Paso 2
+b1 <- data.frame(table(df_final$estatus,df_final$ola))
+b2 <- b1 %>% 
+  group_by(Var2) %>% 
+  transmute(porcentaje=Freq/sum(Freq)) %>% 
+  mutate(idencuesta = 1)
+b2$Var2 <- NULL
+etiquetas.d.1<- cbind(b1,b2)
+etiquetas.d.1 <- na.omit(etiquetas.d.1)
+
+
+d.1 <- ggplot(datos.d.1, aes(x = Var2, fill = Var1, stratum = Var1,
+                             alluvium = Var3, y = porcentaje))+
+    ggalluvial::geom_flow(alpha = .66) + 
+    ggalluvial::geom_stratum(linetype = 0) +
+    scale_y_continuous(labels = scales::percent) + 
+    ylab(label = NULL) +
+    xlab(label = NULL) + 
+    theme(legend.position = 'top',
+          legend.title = element_blank()) +
+    scale_fill_viridis_d(begin = 0, end = .85, direction = -1, option = 'viridis') +
+  ggtitle('Cambio de frecuencias de Estatus Subjetivo según año')
+
+d.1
 ```
 
 
-La Tabla \@ref(tab:modelo01) muestra los resultados del modelo de regresión. @Brady2014 lo enuncia. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-
-> En tablas que **NO SON** generadas con `knitr::kable()` debemos usar otro método:
-En este caso usamos: `paste("(\\#tab:model2)",cap)`, donde previamente definimos el objeto `cap` y luego usamos `paste0()` para unir ambos vectores de caracteres lo cual se debería ver así: `"(\\#tab:model2) Modelos de regresión para autos y sus partes."`
 
 
 ```{r results='asis'}
+if (!require("pacman")) install.packages("pacman") # instalar pacman
+pacman::p_load(dplyr,       # Manipulacion de datos 
+               haven,       # importar datos en .dta o .sav
+               sjmisc,      # descriptivos y frecuencias
+               sjPlot,      # tablas, plots y descriptivos
+               summarytools,# resumen de dataframe
+               texreg,      # tablas de regresion
+               knitr,       # tablas kable
+               kableExtra,  # tablas kable personalizadas
+               ggplot2,     # plots
+               corrplot     # plot correlacion
+               )
+load(file = "input/data/proc/df_final.Rdata" )
+m1 <- lm(ess~sexo,data = df_final)
+m2 <- lm(ess~sexo+edad,data = df_final)
+m3 <- lm(ess~sexo+edad+educacion,data = df_final)
+m4 <- lm(ess~sexo+edad+educacion+ola,data = df_final)
+
 cap <- "Modelos de regresión para autos y sus partes." # Titulo de tabla
 custom.coef.names = c( # Custom names para coeficientes:                                                     
-  "Intercept",
-  "Positive value with 4 items",
-  "average number of hours of care per week",
-  "slightly dependent", "moderately dependent", "severely dependent",
-  "intermediate level of education","high level of education"
+  "Intercepto",
+  "Sexo: mujer",
+  "30-49",
+  "50-64",
+  "65 o más",
+  "Media",
+  "Técnica",
+  "Universitaria",
+  "2017",
+  "2018",
+  "2019"
   )
 # Custom footnote de tabla: 
-custom.note = "$^{***}$p < 0,001;$^{**}$p < 0,01;$^{*}$p < 0,05. Errores estándar robustos entre paréntesis (HC2)"
+custom.note = "$^{***}$p < 0,001;$^{**}$p < 0,01;$^{*}$p < 0,05"
 # texreg::knitreg() decide si usar formato tabla html o latex según corresponda. 
-knitreg(list(m,m2),                            # Modelos 1 y 2
-       caption = paste("(\\#tab:model2)",cap), # Label para crossref + titulo  
-       caption.above = T,                      # Titulo de tabla arriba
-       custom.coef.names=custom.coef.names,    # Definir custom names para coeficientes
-       custom.note = custom.note,              # Definir footnote de tabla
-       booktabs = TRUE,                        # Usar líneas horizontales en tabla
-       scalebox = 0.75,                         # tamaño de tabla a .75
-       float.pos = "hp!"
-       )                        
+texreg::knitreg(list(m1,m2,m3,m4),                     # Modelos 1, 2, 3 y 4
+                caption = cap,                          # Titulo
+                caption.above = T,                      # Titulo de tabla arriba
+                custom.coef.names = custom.coef.names,  # Definir custom names para coeficientes
+                custom.note = custom.note,              # Definir footnote de tabla
+                booktabs = TRUE,                        # Usar líneas horizontales en tabla
+                scalebox = 0.9,                        # tamaño de tabla a .9
+                float.pos = "h!"
+)                        
 ```
-
-
-Table \@ref(tab:model2) contrasta el Modelo 1 saturado, versus el Modelo 2 simplificado. 
 
 # Conclusiones
 
-# References
-
-<div id="refs"> </div>  <!-- Aunque <div> es tag HTML, este método funciona para otros formatos de salida como el PDF. -->
-
-# (APPENDIX) Appendix {-} 
-
-`r if (knitr::is_latex_output()){ '\\appendix'}`          <!-- Si documento es latex, se genera sección de Anexos -->
-`r if (knitr::is_latex_output()){ '\\section{Appendix}'}` <!-- Si documento es latex, se genera titulo de Anexos -->
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 
-|                     | Sample  |   CEP  |
-|---------------------|:-------:|:------:|
-| __Gender__          |         |        |
-| Men                 | 49,82%  | 50,52% |
-| Women               | 50.18%  | 49,47% |
-| __Age__             |         |        |
-| 18 - 24             | 18,55%  | 18,17% |
-| 25 - 34             | 18,86%  | 17,48% |
-| 35 - 44             | 19.09%  | 19,98% |
-| 45 - 54             | 17,96%  | 19,23% |
-| 55 - or more        | 25,54%  | 25.11% |
-| __Education__       |         |        |
-| Primary  or less    | 2,93%   | 15,88% |
-| High school          | 43,23%  | 37,04% |
-| Non university      | 32,63%  | 28,93% |
-| university or more  | 21,21%  | 18,13% |
-Table: `r as.character(paste("(\\#tab:rep-samp)", "Representativeness of the sample"))`. <!-- Label+titulo de tabla en syntax Markdown pura -->
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+# Referencias
+
+
+
+
+
+
