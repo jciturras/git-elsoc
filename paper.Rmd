@@ -2,15 +2,33 @@
 title: "Reproducibilidad: Taller invierno ELSOC-COES"
 linestretch: '1.5'          # interlineado 
 link-citations: yes         # citas linkeadas
-author: Julio Iturra Sanhueza y Martín Venegas
+author:
+- name: Juan Carlos Castillo ^[Corresponding author - juancastillov@uchile.cl - http://jc-castillo.com/]
+  affiliation: Departamento de Sociología, Universidad de Chile
+  number: 1
+- name: Julio Iturra
+  affiliation: Bremen International Graduate School of Social Sciences
+  number: 2
+- name: Francisco Meneses
+  number: 1
+- name: Martín Venegas
+  number: 1
+- name: Daniel Miranda
+  affiliation: Pontificia Universidad Catolica de Chile, MIDE UC
+  number: 3  
 abstract: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do *eiusmod tempor* incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 output:
-  bookdown::html_document2:
-    number_sections: false
   bookdown::pdf_document2:
     template: null
     toc: false
     keep_tex: false
+    pandoc_args:
+      - --template=input/mytemplate.tex #custom template para usar autores con afiliacion
+  bookdown::word_document2:
+    reference_docx: input/template.docx
+    number_sections: false    
+  bookdown::html_document2:
+    number_sections: false
 linkcolor: blue                         # enlaces y citas en color azul
 # bibliography: input/bib/library.bib     # bibliografia en bibtex
 geometry: "left=2cm,right=2cm,top=3cm,bottom=3cm" # márgenes de página
